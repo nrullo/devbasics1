@@ -1,0 +1,23 @@
+{
+  "name": "devbasics1",
+  "version": "1.0.0",
+  "description": "dev basics",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinrf/devbasics1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinrf/devbasics1/issues"
+  },
+  "homepage": "https://github.com/martinrf/devbasics1#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.3"
+  }
+}
