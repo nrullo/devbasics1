@@ -46,15 +46,27 @@ describe("String Calculator", () => {
         assert.equal(StringCalculator.add("1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"), 15);
     });
 
-    it('input \"1\\n2,3\" returns 6', () => {
+    it('input \"1\n2,3\" returns 6', () => {
         assert.equal(StringCalculator.add("1\n2,3"), 6);
     });
 
-    it('input \"1\\n21,3\" returns 25', () => {
+    it('input \"1\n21,3\" returns 25', () => {
         assert.equal(StringCalculator.add("1\n21,3"), 25);
     });
 
-    it('input \"0,1\\n2,3,4\n5,6,7,8\n9\" returns 45', () => {
+    it('input \"0,1\n2,3,4\n5,6,7,8\n9\" returns 45', () => {
         assert.equal(StringCalculator.add("0,1\n2,3,4\n5,6,7,8\n9"), 45);
+    });
+
+    it('input \"//;\n1;2\" returns 3', () => {
+        assert.equal(StringCalculator.add("//;\n1;2"), 3);
+    });
+
+    it('input \"//X\n1X2,4\" returns 7', () => {
+        assert.equal(StringCalculator.add("//X\n1X2,4"), 7);
+    });
+
+    it('input \"//SEP\n1SEP2SEP20,30\" returns 53', () => {
+        assert.equal(StringCalculator.add("//SEP\n1SEP2SEP20,30"), 53);
     });
 });
