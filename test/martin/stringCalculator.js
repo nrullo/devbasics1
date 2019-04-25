@@ -1,6 +1,6 @@
 class StringCalculator {
     add(values){
-        const numbers = values.split(",");
+        const numbers = values.replace(/\n/g, ",").split(",");
         let sum = 0;
         numbers.forEach(number => {
             sum += Number(number);
