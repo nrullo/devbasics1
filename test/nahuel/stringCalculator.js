@@ -1,7 +1,8 @@
 class StringCalculator {
     add(values) {
         const inputDelimiter = this.getInputDelimitar(values);
-        const numbers = this.parseAndSplitToNumbers(values, inputDelimiter);
+        let numbers = this.parseAndSplitToNumbers(values, inputDelimiter);
+        numbers = this.removeNumbersBiggerThan1000(numbers);
         let negativeNumbers = this.getNegativeNumbers(numbers);
 
         if (negativeNumbers.length > 0) {
@@ -31,6 +32,10 @@ class StringCalculator {
 
     getNegativeNumbers(numbers) {
         return numbers.filter(number => number < 0);
+    }
+
+    removeNumbersBiggerThan1000(numbers) {
+        return numbers.filter(number => number < 1000);
     }
 }
 

@@ -78,4 +78,8 @@ describe("String Calculator", () => {
     it('negative numbers expect an error message and the negative numbers', () => {
         expect(() => StringCalculator.add("-1,-10")).to.throw('negatives not allowed: -1, -10');
     });
+
+    it('input \"2,1001\" returns 2, ignoring numbers bigger than 1000', () => {
+        assert.equal(StringCalculator.add("2,1001"), 2);
+    });
 });
