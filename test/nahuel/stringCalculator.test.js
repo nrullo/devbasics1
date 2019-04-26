@@ -1,4 +1,5 @@
 const assert = require("chai").assert;
+const expect = require("chai").expect;
 const StringCalculator = require("./stringCalculator");
 
 describe("String Calculator", () => {
@@ -68,5 +69,13 @@ describe("String Calculator", () => {
 
     it('input \"//SEP\n1SEP2SEP20,30\" returns 53', () => {
         assert.equal(StringCalculator.add("//SEP\n1SEP2SEP20,30"), 53);
+    });
+
+    it('one negative number expect return an error message and the negative number', () => {
+        expect(() => StringCalculator.add("-1")).to.throw('negatives not allowed: -1');
+    });
+
+    it('negative numbers expect an error message and the negative numbers', () => {
+        expect(() => StringCalculator.add("-1,-10")).to.throw('negatives not allowed: -1, -10');
     });
 });
